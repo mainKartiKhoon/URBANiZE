@@ -34,7 +34,7 @@ const Home = () => {
                 {/* //? First Para in Home para */}
                 <div className='firstPara  w-[50%]  flex flex-col gap-[50px] pt-[30px] relative'>
                     {/* //? heading */}
-                    <h2 className='text-7xl leading-[70px] headingInPage1'>Hotel, car & experiences</h2>
+                    <h2 className='text-7xl leading-[70px] headingInPage1'>Hotels, cars & experiences</h2>
                     {/* //? para */}
                     <p className='paraInFirstPara text-[#9298a4] text-lg pr-[5px]'>Accompanying us, you have a trip full of experiences. With Urbanize, you can book accommodation, resorts villas, hotels</p>
                     <button className=' bg-[#4f46e5]  rounded-[30px] p-[11px] px-[30px] w-fit  hover:bg-[#4338ca] transition-all duration-150'>Start Your Search</button>

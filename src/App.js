@@ -23,6 +23,7 @@ import { LuSettings } from "react-icons/lu";
 import SidebarItem from './components/SidebarItem';
 
 function App() {
+  
   return (
     <div className="App">
 
