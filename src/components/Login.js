@@ -24,10 +24,12 @@ const Login = () => {
     password: "",
   });
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const handleLogin = () => {
     const loggedUser = JSON.parse(localStorage.getItem("user"))
+    
     if (input.email === loggedUser.email && input.password === loggedUser.password) {
+        // console.log(loggedUser.name);
+        
         RandomBool.setIsLoggedIn(true);
         
         navigate("/")

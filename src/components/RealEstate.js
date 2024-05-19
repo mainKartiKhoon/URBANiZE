@@ -28,7 +28,7 @@ const RealEstate = () => {
       <div className='properties flex flex-wrap gap-[30px] justify-center '>
         {
           getRealEstateCards().map((singleCard) => (
-            <CardInRealEstate key={singleCard.id} info={singleCard} likedRealEstate={likedRealEstate} setLikedRealEstate={setLikedRealEstate}/>
+            <CardInRealEstate key={singleCard.id} info={singleCard} likedRealEstate ={likedRealEstate} setLikedRealEstate={setLikedRealEstate}/>
             
           ))
         }

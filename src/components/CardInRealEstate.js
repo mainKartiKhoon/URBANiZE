@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "./CardInRealEstate.css"
 import { RiLinksFill } from "react-icons/ri";
 import { MdFamilyRestroom } from "react-icons/md";
@@ -10,15 +11,17 @@ import { FcLikePlaceholder } from "react-icons/fc";
 import { FcLike } from "react-icons/fc";
 import { FcDislike } from "react-icons/fc";
 import { CiHeart } from "react-icons/ci";
-
+import { RealEstateContext } from '../context/RealEstate';
 
 const CardInRealEstate = (props) => {
   let info = props.info;
   console.log(info);
+  const navigate = useNavigate();
   // console.log(info.title);
   let [liked, setLiked] = useState(false);
   let likedRealEstate = props.likedRealEstate;
   let setLikedRealEstate = props.setLikedRealEstate;
+  const realEstateCard = useContext(RealEstateContext);
 
   function handleLike() {
     if (likedRealEstate.includes(info.id)) {
@@ -34,6 +37,11 @@ const CardInRealEstate = (props) => {
     }
   }
 
+  function handleClick() {
+    realEstateCard.setCurrObjectInRealEstate(info);
+    navigate('/realestate/template');
+  }
+
   return (
     <div className=' w-[630px]  mainBox h-[260px] relative border  border-[#232f44] p-[10px] rounded-[20px]  flex items-center gap-[20px]'>
       {/* //? Like button */}
@@ -41,7 +49,7 @@ const CardInRealEstate = (props) => {
       <div onClick={handleLike} className='bg-[#33415562] hover:bg-[#3f4d61] absolute top-[15px] right-[15px] hover:cursor-pointer p-[7px] rounded-full'>
         {
           likedRealEstate.includes(info.id) ? (<FcLike fontSize={22} />) : (<CiHeart fontSize={22} />)
-          
+
         }
       </div>
 
@@ -64,7 +72,7 @@ const CardInRealEstate = (props) => {
         </div>
 
         {/* //? Title */}
-        <div className='text-lg mb-[15px] hover:cursor-pointer'>{info.title}</div>
+        <div onClick={handleClick} className='text-lg mb-[15px] hover:cursor-pointer'>{info.title}</div>
 
 
         {/* //? So many Emojis */}

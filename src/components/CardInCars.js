@@ -5,12 +5,18 @@ import { FcDislike } from "react-icons/fc";
 import { FaStar } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import "./CardInCars.css"
+import { CarsContext } from '../context/Cars';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CardInCars = (props) => {
   let info = props.info;
   console.log(info);
   let likedCars = props.likedCars;
   let setLikedCars = props.setLikedCars;
+  let carCard = useContext(CarsContext);
+  const navigate = useNavigate();
+
 
   function handleLike() {
     if (likedCars.includes(info.id)) {
@@ -24,6 +30,11 @@ const CardInCars = (props) => {
         setLikedCars((prev) => [...prev, info.id])
       }
     }
+  }
+
+  function handleClick() {
+    carCard.setCurrObjectInCars(info);
+    navigate('/cars/template');
   }
   
   return (
@@ -105,7 +116,7 @@ const CardInCars = (props) => {
       {/* //?REST PART  */}
       <div className='restPartInCars pt-[10px] px-[30px]'>
         {/* //? Title */}
-        <div className='text-lg font-semibold mb-[5px] hover:cursor-pointer'>{info.name}</div>
+        <div onClick={handleClick} className='text-lg font-semibold mb-[5px] hover:cursor-pointer'>{info.name}</div>
 
         {/* //? Info */}
         <div className='text-sm text-[#9aa1ad]'>{info.seats} seats - {info.gearbox} gearbox</div>
