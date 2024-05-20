@@ -12,11 +12,23 @@ import { TbBed } from "react-icons/tb";
 import { LuBath } from "react-icons/lu";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { IoPersonAddOutline } from "react-icons/io5";
+import { GiSteeringWheel } from "react-icons/gi";
+import { FaSuitcase } from "react-icons/fa6";
+import { GiCarSeat } from "react-icons/gi";
+import { FaUserGroup } from "react-icons/fa6";
+import { IoCarSport } from "react-icons/io5";
+import { FaCarAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 const CarsTemplate = () => {
 
   const carsTemplate = useContext(CarsContext);
+  const navigate = useNavigate();
   let info = carsTemplate.currObjectInCars;
+
+  function reserveClick() {
+    navigate('/checkout');
+  }
 
   return (
     <div className='text-white flex flex-wrap justify-center gap-[40px] mt-[40px] mainTemplate relative'>
@@ -68,28 +80,28 @@ const CarsTemplate = () => {
           <div className='text-[#cdd1d7] w-[100%] font-semibold flex items-center gap-[40px]'>
             {/* guest */}
             <div className='text-sm flex gap-[9px] items-center'>
-              <IoPersonOutline size={18} />
-              <div>{info.guests} <span className='textToHide1'>guests</span></div>
+              <FaUserGroup size={18} />
+              <div>{info.guests} <span className='textToHide1'>{info.seats} seats</span></div>
             </div>
 
             {/* bed */}
             <div className='text-sm flex gap-[9px] items-center'>
-              <TbBed size={18} />
-              <div>{info.beds} <span className='textToHide1'>beds</span></div>
+              <GiCarSeat size={18} />
+              <div>{info.beds} <span className='textToHide1'>Luxurious Interior</span></div>
 
             </div>
 
             {/* bath */}
             <div className='text-sm flex gap-[9px] items-center'>
-              <LuBath size={18} />
-              <div>{info.baths} <span className='textToHide1'>bath</span></div>
+              <GiSteeringWheel size={18} />
+              <div>{info.baths} <span className='textToHide1'>{info.gearbox}gearbox</span></div>
 
             </div>
 
             {/* bedroom */}
             <div className='text-sm flex gap-[9px] items-center'>
-              <TbBed size={18} />
-              <div>{info.bedrooms} <span className='textToHide1'>bedroom</span></div>
+              <FaSuitcase size={18} />
+              <div>{info.bedrooms} <span className='textToHide1'>2 bags</span></div>
 
             </div>
           </div>
@@ -98,7 +110,7 @@ const CarsTemplate = () => {
         {/* Stay Information */}
         <div className='border stayInfo border-[#283141] w-[800px] py-[25px] px-[20px] rounded-[12px] flex flex-col gap-[25px]'>
           {/* heading */}
-          <div className='text-2xl font-semibold stayTitle'>Stay Information</div>
+          <div className='text-2xl font-semibold stayTitle'>Car Information</div>
 
           {/* seperator */}
           <div className='h-[1px] bg-[#3c4656] w-[50px]'></div>
@@ -121,7 +133,7 @@ const CarsTemplate = () => {
           {/* Price and Rating */}
           <div className='flex items-center justify-between'>
             {/* Price */}
-            <div className='text-4xl font-semibold'>${info.price} <span className='text-[#9097a3] text-base font-normal'>/night</span></div>
+            <div className='text-4xl font-semibold'>${info.price} <span className='text-[#9097a3] text-base font-normal'>/day</span></div>
 
             {/* Rating */}
             <div className='text-sm flex gap-[6px] items-center'>
@@ -134,26 +146,26 @@ const CarsTemplate = () => {
           {/* data and guests */}
           <div className='my-[10px]'>
             <div className='border border-[#283141] w-[100%] rounded-t-[15px] py-[15px] px-[10px] flex items-center gap-[10px]'>
-              <IoCalendarClearOutline size={25} color='#9ca3af' />
+              <IoCarSport size={25} color='#9ca3af' />
               <div>
-                <div className='font-semibold text-xl'>May 08 - May 16</div>
-                <div className='text-[#89909c] text-sm'>Check in - Check out</div>
+                <div className='font-semibold text-xl'>Pick Up</div>
+                <div className='text-[#89909c] text-sm'>{info.location}</div>
               </div>
 
             </div>
             <div className='border border-[#283141] w-[100%] rounded-b-[15px] py-[15px] px-[10px] flex items-center gap-[10px]'>
-              <IoPersonAddOutline color='#9ca3af' size={25} />
+              <IoCarSport color='#9ca3af' size={25} />
               <div>
-                <div className='font-semibold text-xl'>{info.guests} Guests</div>
-                <div className='text-[#89909c] text-sm'>Guests</div>
+                <div className='font-semibold text-xl'>{info.guests} Drop off</div>
+                <div className='text-[#89909c] text-sm'>{info.location2}</div>
               </div>
             </div>
           </div>
 
           {/* how many nights */}
           <div className='flex items-center justify-between text-[#dde3ee]'>
-            <div>1 night</div>
-            <div>${info.price}</div>
+            <div>${info.price} X 3 days</div>
+            <div>${info.price * 3}</div>
           </div>
 
           {/* service charge */}
@@ -168,12 +180,12 @@ const CarsTemplate = () => {
           {/* total */}
           <div className='flex items-center justify-between text-[#e3e5e9] font-semibold'>
             <div>Total</div>
-            <div>${info.price}</div>
+            <div>${info.price * 3}</div>
           </div>
 
 
           {/* Reserve Button */}
-          <button className='bg-[#4f46e5] rounded-full w-full py-[10px] font-semibold mt-[10px]'>Reserve</button>
+          <button onClick={reserveClick} className='bg-[#4f46e5] rounded-full w-full py-[10px] font-semibold mt-[10px]'>Reserve</button>
         </div>
       </div>
 
@@ -192,7 +204,7 @@ const CarsTemplate = () => {
           </div>
 
           {/* Reservation */}
-          <button className='bg-[#4f46e5] reserveInHidden rounded-[15px] py-[15px] px-[35px] font-semibold'>Reserve</button>
+          <button onClick={reserveClick} className='bg-[#4f46e5] reserveInHidden rounded-[15px] py-[15px] px-[35px] font-semibold'>Reserve</button>
         </div>
       </div>
     </div>

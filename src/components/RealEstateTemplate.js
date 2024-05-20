@@ -11,11 +11,16 @@ import { TbBed } from "react-icons/tb";
 import { LuBath } from "react-icons/lu";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { IoPersonAddOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom'
 
 const RealEstateTemplate = () => {
 
   const realEstateTemplate = useContext(RealEstateContext);
   let info = realEstateTemplate.currObjectInRealEstate;
+  const navigate = useNavigate();
+  function reserveClick() {
+    navigate('/checkoutRealestate');
+  }
 
   return (
     <div className='text-white flex flex-wrap justify-center gap-[40px] mt-[40px] mainTemplate relative'>
@@ -173,7 +178,7 @@ const RealEstateTemplate = () => {
 
 
           {/* Reserve Button */}
-          <button className='bg-[#4f46e5] rounded-full w-full py-[10px] font-semibold mt-[10px]'>Reserve</button>
+          <button onClick={reserveClick} className='bg-[#4f46e5] rounded-full w-full py-[10px] font-semibold mt-[10px]'>Reserve</button>
         </div>
       </div>
 
@@ -192,7 +197,7 @@ const RealEstateTemplate = () => {
           </div>
 
           {/* Reservation */}
-          <button className='bg-[#4f46e5] reserveInHidden rounded-[15px] py-[15px] px-[35px] font-semibold'>Reserve</button>
+          <button onClick={reserveClick} className='bg-[#4f46e5] reserveInHidden rounded-[15px] py-[15px] px-[35px] font-semibold'>Reserve</button>
         </div>
       </div>
     </div>

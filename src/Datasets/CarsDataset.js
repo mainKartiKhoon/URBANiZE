@@ -10,8 +10,9 @@ export const CarsDataset = [
         rating: "3.8",
         reviews: "534",
         location: "Peurto Rico, America",
+        location2: "San Juan, Puerto Rico",
         bags: "2",
-
+        owner: "John Doe"
     },
     {
         id: 2,
@@ -24,8 +25,9 @@ export const CarsDataset = [
         rating: "4.7",
         reviews: "300",
         location: "Tokyo, Japan",
+        location2: "Kyoto, Japan",
         bags: "4",
-
+        owner: "Jane Smith"
     },
     {
         id: 3,
@@ -38,7 +40,9 @@ export const CarsDataset = [
         rating: "4.5",
         reviews: "420",
         location: "Los Angeles, USA",
+        location2: "San Francisco, USA",
         bags: "3",
+        owner: "Michael Johnson"
     },
     {
         id: 4,
@@ -51,7 +55,9 @@ export const CarsDataset = [
         rating: "4.8",
         reviews: "250",
         location: "Berlin, Germany",
+        location2: "Hamburg, Germany",
         bags: "4",
+        owner: "Emily Williams"
     },
     {
         id: 5,
@@ -64,7 +70,9 @@ export const CarsDataset = [
         rating: "4.6",
         reviews: "380",
         location: "Paris, France",
+        location2: "Nice, France",
         bags: "3",
+        owner: "David Brown"
     },
     {
         id: 6,
@@ -77,7 +85,9 @@ export const CarsDataset = [
         rating: "4.2",
         reviews: "350",
         location: "Detroit, USA",
+        location2: "Chicago, USA",
         bags: "2",
+        owner: "Sarah Davis"
     },
     {
         id: 7,
@@ -90,7 +100,9 @@ export const CarsDataset = [
         rating: "4.0",
         reviews: "270",
         location: "Chicago, USA",
+        location2: "Milwaukee, USA",
         bags: "2",
+        owner: "Robert Wilson"
     },
     {
         id: 8,
@@ -103,7 +115,9 @@ export const CarsDataset = [
         rating: "4.3",
         reviews: "320",
         location: "Miami, USA",
+        location2: "Orlando, USA",
         bags: "3",
+        owner: "Jessica Martinez"
     },
     {
         id: 9,
@@ -116,7 +130,9 @@ export const CarsDataset = [
         rating: "4.0",
         reviews: "300",
         location: "Frankfurt, Germany",
+        location2: "Munich, Germany",
         bags: "3",
+        owner: "William Anderson"
     },
     {
         id: 10,
@@ -129,7 +145,9 @@ export const CarsDataset = [
         rating: "4.1",
         reviews: "280",
         location: "Sapporo, Japan",
+        location2: "Nagoya, Japan",
         bags: "3",
+        owner: "Jennifer Taylor"
     },
     {
         id: 11,
@@ -142,7 +160,9 @@ export const CarsDataset = [
         rating: "4.7",
         reviews: "310",
         location: "Osaka, Japan",
+        location2: "Yokohama, Japan",
         bags: "4",
+        owner: "Daniel Thomas"
     },
     {
         id: 12,
@@ -155,6 +175,8 @@ export const CarsDataset = [
         rating: "4.9",
         reviews: "200",
         location: "Stuttgart, Germany",
+        location2: "Cologne, Germany",
         bags: "2",
+        owner: "Lisa Garcia"
     },
-]
+];
