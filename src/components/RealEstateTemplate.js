@@ -33,6 +33,7 @@ const RealEstateTemplate = () => {
             <div className='text-sm text-[#ccd1d7] gap-[7px] flex items-center hover:bg-[#1f2937] transition-all duration-150 hover:cursor-pointer py-[7px] px-[10px] rounded-[10px]'>
               <IoShareOutline size={19} />
               <div>Share</div>
+              
             </div>
           </div>
 
